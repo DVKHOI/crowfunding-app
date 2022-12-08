@@ -18,7 +18,7 @@ module.exports = {
         whiteSoft: "#FCFBFF",
         graySoft: "#FCFCFC",
         strockSoft: "#F1F1F3",
-        lineBackground: "#FCFCFD",
+        lineBG: "#FCFCFD",
         error: "#EB5757",
         darkBG: "#13131A",
         darkSecondary: "#1C1C24",
