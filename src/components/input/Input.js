@@ -25,10 +25,10 @@ const Input = (props) => {
         autoComplete="off"
         id={name}
         type={type}
-        className={`w-full px-6 py-4 text-sm font-medium border rounded-lg  dark:text-white  text-text1 placeholder:text-text4  bg-transparent dark:placeholder:text-text2 ${
+        className={`w-full px-6 py-4 text-sm font-medium border rounded-lg  dark:text-white   placeholder:text-text4  bg-transparent dark:placeholder:text-text2 ${
           error.length > 0
-            ? "border-error"
-            : "border-strockSoft dark:border-darkStroke"
+            ? "border-error text-error"
+            : "border-strockSoft text-text1 dark:border-darkStroke"
         } ${children ? "pr-16" : ""}`}
         placeholder={error.length <= 0 ? placeholder : ""}
         {...rest}

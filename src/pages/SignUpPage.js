@@ -1,7 +1,6 @@
 import useToggleValue from "hooks/useToggleValue";
 import React from "react";
 import LayoutAuthentication from "layout/LayoutAuthentication";
-import google from "../images/google.png";
 import FormGroup from "components/common/FormGroup";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -11,7 +10,7 @@ import { Label } from "components/label";
 import { Input } from "components/input";
 import { IconEyeToggle } from "components/icons";
 import { Checkbox } from "components/checkbox";
-import { Button } from "components/button";
+import { Button, ButtonGoogle } from "components/button";
 
 const schema = yup.object({
   name: yup.string().required("This field is required"),
@@ -49,9 +48,7 @@ const SignUpPage = () => {
           Sign in
         </Link>
       </p>
-      <button className="flex items-center justify-center w-full font-semibold gap-x-2 leading-[26px] py-3 border border-strock rounded-xl mb-5 dark:text-white dark:border-darkStroke">
-        <img src={google} alt="google" /> <span>Sign up with google</span>
-      </button>
+      <ButtonGoogle></ButtonGoogle>
       <p className=" p-3 text-xs lg:text-sm lg:leading-[22px] leading-[18px] text-center dark:text-white text-text2 mb-4 lg:mb-8 cursor-pointer">
         Or sign up with email
       </p>
