@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import classNames from "utils/classNames";
 
 const Button = ({
   children,
@@ -16,9 +17,11 @@ const Button = ({
   return (
     <button
       type={type}
-      className={` p-4 text-base font-semibold leading-6 text-white rounded-lg flex justify-center items-center min-h-[56px] ${
-        isLoading ? "pointer-events-none opacity-50" : ""
-      } ${className}`}
+      className={classNames(
+        "p-4 text-base font-semibold leading-6 text-white rounded-lg flex justify-center items-center min-h-[56px]",
+        isLoading ? "pointer-events-none opacity-50" : "",
+        className
+      )}
       {...rest}
     >
       {child}
