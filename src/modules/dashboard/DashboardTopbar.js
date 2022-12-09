@@ -14,7 +14,10 @@ const DashboardTopbar = () => {
       </div>
       <div className="flex items-center justify-end flex-1 gap-x-10">
         <DashboardFund></DashboardFund>
-        <Button className="bg-secondary w-[191px]  px-[26px] py-[13px] ">
+        <Button
+          type="button"
+          className="bg-secondary w-[191px]  px-[26px] py-[13px] "
+        >
           Start a campaign
         </Button>
         <img
