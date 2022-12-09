@@ -6,6 +6,21 @@ const DashboardPage = () => {
     <LayoutDashboard>
       Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci itaque
       voluptate ullam obcaecati earum impedit harum? Cum itaque maxime beatae
+      nobis at eius corrupti a veritatis facilis iusto. Harum, dolores. Lorem
+      ipsum dolor, sit amet consectetur adipisicing elit. Adipisci itaque
+      voluptate ullam obcaecati earum impedit harum? Cum itaque maxime beatae
+      nobis at eius corrupti a veritatis facilis iusto. Harum, dolores. Lorem
+      ipsum dolor, sit amet consectetur adipisicing elit. Adipisci itaque
+      voluptate ullam obcaecati earum impedit harum? Cum itaque maxime beatae
+      nobis at eius corrupti a veritatis facilis iusto. Harum, dolores. Lorem
+      ipsum dolor, sit amet consectetur adipisicing elit. Adipisci itaque
+      voluptate ullam obcaecati earum impedit harum? Cum itaque maxime beatae
+      nobis at eius corrupti a veritatis facilis iusto. Harum, dolores. Lorem
+      ipsum dolor, sit amet consectetur adipisicing elit. Adipisci itaque
+      voluptate ullam obcaecati earum impedit harum? Cum itaque maxime beatae
+      nobis at eius corrupti a veritatis facilis iusto. Harum, dolores. Lorem
+      ipsum dolor, sit amet consectetur adipisicing elit. Adipisci itaque
+      voluptate ullam obcaecati earum impedit harum? Cum itaque maxime beatae
       nobis at eius corrupti a veritatis facilis iusto. Harum, dolores.
     </LayoutDashboard>
   );
