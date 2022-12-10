@@ -2,7 +2,7 @@ import React from "react";
 
 const DashboardFund = () => {
   return (
-    <div className="text-text2 font-semibold leading-[26px] flex items-center gap-x-2 cursor-pointer select-none">
+    <div className="text-text2 font-semibold leading-[26px]  items-center gap-x-2 cursor-pointer select-none hidden lg:flex">
       <span className="w-5">
         <svg
           xmlns="http://www.w3.org/2000/svg"

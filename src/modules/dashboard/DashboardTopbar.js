@@ -16,7 +16,7 @@ const DashboardTopbar = () => {
         <DashboardFund></DashboardFund>
         <Button
           type="button"
-          className="bg-secondary w-[191px]  px-[26px] py-[13px] "
+          className="bg-secondary w-[191px]  px-[26px] py-[13px] hidden lg:block "
         >
           Start a campaign
         </Button>
