@@ -39,7 +39,7 @@ const sidebarLink = [
   {
     icon: <IconLogout></IconLogout>,
     title: "Logout",
-    url: "#",
+    url: "/logout",
     onClick: () => {},
   },
   {
@@ -50,13 +50,19 @@ const sidebarLink = [
   },
 ];
 const DashboardSidebar = () => {
+  const navLinkClass =
+    "flex items-center gap-x-5 md:w-12 md:h-12 md:rounded-lg md:justify-center md:mb-[30px]  last:mt-auto last:shadow-sdprimary last:bg-white ";
   return (
     <div className="w-full md:w-[76px] rounded-3xl bg-white shadow-[10px_10px_20px_rgba(218,_213,_213,_0.15)] px-[14px] py-10 flex flex-col flex-shrink-0">
       {sidebarLink.map((link) => (
         <NavLink
           to={link.url}
           key={link.title}
-          className="flex items-center gap-x-5 md:w-12 md:h-12 md:rounded-lg md:justify-center md:mb-[30px] text-icon-color last:mt-auto last:shadow-sdprimary last:bg-white"
+          className={({ isActive }) =>
+            isActive
+              ? `${navLinkClass} bg-primary bg-opacity-20 text-primary`
+              : `${navLinkClass}text-icon-color`
+          }
         >
           <span>{link.icon}</span>
           <span className="md:hidden">{link.title}</span>

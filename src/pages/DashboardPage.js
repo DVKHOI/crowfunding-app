@@ -1,16 +1,17 @@
+import Gap from "components/common/Gap";
 import Heading from "components/common/Heading";
-import LayoutDashboard from "layout/LayoutDashboard";
 import CampaignGrid from "modules/campaign/CampaignGrid";
 import CampaignItem from "modules/campaign/CampaignItem";
 import CampFeature from "modules/campaign/CampFeature";
-import React from "react";
+import React, { Fragment } from "react";
 import { v4 } from "uuid";
 
 const DashboardPage = () => {
   return (
-    <LayoutDashboard>
+    <Fragment>
       <Heading number={4}>Your Campaign </Heading>
       <CampFeature></CampFeature>
+      <Gap></Gap>
       <Heading>Popular Campaign </Heading>
       <CampaignGrid>
         {Array(4)
@@ -27,7 +28,7 @@ const DashboardPage = () => {
             <CampaignItem key={v4()}></CampaignItem>
           ))}
       </CampaignGrid>
-    </LayoutDashboard>
+    </Fragment>
   );
 };
 

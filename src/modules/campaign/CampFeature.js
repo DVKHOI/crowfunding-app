@@ -7,7 +7,7 @@ import CampTitle from "./parts/CampTitle";
 
 const CampFeature = () => {
   return (
-    <div className="w-full max-w-[1048px] flex items-center gap-x-[30px] mb-[30px]">
+    <div className="w-full max-w-[1048px] flex items-center gap-x-[30px] ">
       <CampImage className="h-[266px] flex-1 "></CampImage>
       <div className="flex-1 max-w-[435px]">
         <CampCategory
@@ -22,7 +22,7 @@ const CampFeature = () => {
           the face of urbanisation
         </CampDesc>
         <div className="w-full h-[5px] rounded-full bg-[#EFEFEF] mb-[22px]">
-          <div className="h-full w-2/4 rounded-full bg-primary"></div>
+          <div className="w-2/4 h-full rounded-full bg-primary"></div>
         </div>
         <div className="flex gap-x-[65px] justify-between">
           <CampMeta text="Raised of $2,500" size="big"></CampMeta>

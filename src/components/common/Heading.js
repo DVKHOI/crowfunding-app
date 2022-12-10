@@ -10,7 +10,7 @@ const Heading = ({ children, className = "", number = null }) => {
       )}
     >
       {children}
-      {number && <span className="text-secondary">{`(${number})`}</span>}
+      {number && <span className="text-secondary">{` (${number})`}</span>}
     </h2>
   );
 };
