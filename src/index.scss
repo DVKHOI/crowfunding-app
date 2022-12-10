@@ -8,10 +8,35 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
   }
-  input {
+  input,
+  textarea {
     @apply outline-none;
   }
 }
 input:focus + .error-input {
   display: none;
+}
+.quill {
+  border: 1px solid #f1f1f3;
+  border-radius: 10px;
+  padding: 15px 25px;
+  .ql-toolbar.ql-snow {
+    border: none;
+    background: none;
+    margin: 0 auto;
+    @apply bg-text4 bg-opacity-10 rounded-lg py-3 px-5 inline-block translate-x-2/4;
+  }
+  .ql-container.ql-snow,
+  .ql-editor {
+    @apply border-0 font-primary text-base min-h-[320px];
+  }
+  .ql-editor {
+    @apply pt-10;
+  }
+  .ql-editor.ql-blank::before {
+    font-style: normal;
+    font-size: 14px;
+    font-weight: 500;
+    color: #b2b3bd;
+  }
 }
