@@ -13,6 +13,7 @@ const Input = (props) => {
     placeholder = "",
     error = "",
     children,
+    className = "",
     ...rest
   } = props;
   const { field } = useController({
@@ -31,7 +32,8 @@ const Input = (props) => {
           error.length > 0
             ? "border-error text-error"
             : "border-strockSoft text-text1 dark:border-darkStroke",
-          children ? "pr-16" : ""
+          children ? "pr-16" : "",
+          className
         )}
         placeholder={error.length <= 0 ? placeholder : ""}
         {...rest}
@@ -52,7 +54,7 @@ const Input = (props) => {
 };
 
 Input.propTypes = {
-  control: PropTypes.any.isRequired,
+  control: PropTypes.any,
   name: PropTypes.string,
   error: PropTypes.string,
   type: PropTypes.string,
