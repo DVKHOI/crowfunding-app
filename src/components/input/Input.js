@@ -54,7 +54,7 @@ const Input = (props) => {
 };
 
 Input.propTypes = {
-  control: PropTypes.any,
+  control: PropTypes.any.isRequired,
   name: PropTypes.string,
   error: PropTypes.string,
   type: PropTypes.string,
