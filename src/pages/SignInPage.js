@@ -5,15 +5,14 @@ import FormGroup from "components/common/FormGroup";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Label } from "components/label";
 import { Input } from "components/input";
 import { IconEyeToggle } from "components/icons";
 import { Button, ButtonGoogle } from "components/button";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { authLogin } from "store/auth/auth-slice";
 import { toast } from "react-toastify";
-import { useEffect } from "react";
 
 const schema = yup.object({
   email: yup.string().email("").required("This field is required"),
@@ -40,15 +39,7 @@ const SignInPage = () => {
       toast.error(error.message);
     }
   };
-  const { user } = useSelector((state) => state.auth);
-  const navigate = useNavigate();
 
-  useEffect(() => {
-    if (user && user.id) {
-      navigate("/");
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [user]);
   const { value: showPass, handleShowValue: handleShowPass } = useToggleValue();
   return (
     <LayoutAuthentication heading="Welcome Back!">
