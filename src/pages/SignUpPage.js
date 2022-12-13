@@ -11,6 +11,9 @@ import { Input } from "components/input";
 import { IconEyeToggle } from "components/icons";
 import { Checkbox } from "components/checkbox";
 import { Button, ButtonGoogle } from "components/button";
+import { useDispatch } from "react-redux";
+import { authRegister } from "store/auth/auth-slice";
+import { toast } from "react-toastify";
 
 const schema = yup.object({
   name: yup.string().required("This field is required"),
@@ -27,14 +30,22 @@ const SignUpPage = () => {
   const {
     handleSubmit,
     control,
+    reset,
     formState: { isValid, isSubmitting, errors },
   } = useForm({
     mode: "onChange",
     resolver: yupResolver(schema),
   });
-
-  const handleSignUp = (values) => {
+  const dispatch = useDispatch();
+  const handleSignUp = async (values) => {
     if (!isValid) return;
+    try {
+      dispatch(authRegister(values));
+
+      reset();
+    } catch (error) {
+      toast.error(error.message);
+    }
   };
   const { value: acceptTerm, handleShowValue: handleToggleTerm } =
     useToggleValue();
@@ -44,8 +55,8 @@ const SignUpPage = () => {
     <LayoutAuthentication heading="Sign Up">
       <p className="mb-6 text-xs font-normal text-center lg:mb-8 lg:text-sm text-text3">
         Already have an account?
-        <Link to="/sign-in" className="font-medium underline text-primary">
-          Sign in
+        <Link to="/login" className="font-medium underline text-primary">
+          Login
         </Link>
       </p>
       <ButtonGoogle></ButtonGoogle>
@@ -106,6 +117,7 @@ const SignUpPage = () => {
           className="w-full"
           kind="primary"
           isLoading={isSubmitting}
+          disabled={acceptTerm === false}
         >
           Create my account
         </Button>
