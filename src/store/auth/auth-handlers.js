@@ -29,6 +29,7 @@ function* handleAuthLogin(aciton) {
       saveToken(response.data.accessToken, response.data.refreshToken);
       yield call(handleAuthFetchMe, { payload: response.data.accessToken });
     }
+    toast.success("Login successfully");
   } catch (error) {
     const response = error.response.data;
     if (response.statusCode === 403) {
