@@ -23,7 +23,6 @@ const generateTokens = (payload) => {
       expiresIn: "48h",
     }
   );
-
   return { accessToken, refreshToken };
 };
 function updateRefreshToken(name, refreshToken) {
@@ -48,6 +47,7 @@ app.get("/me", verifyToken, (req, res) => {
 });
 app.post("/auth/login", (req, res) => {
   const email = req.body.email;
+  console.log(req.body);
   const user = users.find((user) => {
     return user.email === email;
   });

@@ -5,11 +5,15 @@ import FormGroup from "components/common/FormGroup";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Label } from "components/label";
 import { Input } from "components/input";
 import { IconEyeToggle } from "components/icons";
 import { Button, ButtonGoogle } from "components/button";
+import { useDispatch, useSelector } from "react-redux";
+import { authLogin } from "store/auth/auth-slice";
+import { toast } from "react-toastify";
+import { useEffect } from "react";
 
 const schema = yup.object({
   email: yup.string().email("").required("This field is required"),
@@ -27,16 +31,31 @@ const SignInPage = () => {
     mode: "onChange",
     resolver: yupResolver(schema),
   });
-  const handleSignIn = (values) => {
+  const dispatch = useDispatch();
+  const handleSignIn = async (values) => {
     if (!isValid) return;
+    try {
+      dispatch(authLogin(values));
+    } catch (error) {
+      toast.error(error.message);
+    }
   };
+  const { user } = useSelector((state) => state.auth);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (user && user.id) {
+      navigate("/");
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [user]);
   const { value: showPass, handleShowValue: handleShowPass } = useToggleValue();
   return (
     <LayoutAuthentication heading="Welcome Back!">
       <p className="mb-6 text-xs font-normal text-center lg:mb-8 lg:text-sm text-text3">
         Dont have an account?{" "}
-        <Link to="/sign-up" className="font-medium underline text-primary">
-          Sign up
+        <Link to="/register" className="font-medium underline text-primary">
+          Register
         </Link>
       </p>
       <ButtonGoogle text="Sign in with google"></ButtonGoogle>
