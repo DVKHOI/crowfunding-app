@@ -72,5 +72,6 @@ function* handleAuthLogout() {
     })
   );
   logOut();
+  toast.success("You log out successfully");
 }
 export { handleAuthLogin, handleRefreshToken, handleAuthLogout };
