@@ -14,6 +14,8 @@ const ShippingPage = lazy(() => import("./pages/ShippingPage"));
 const PaymentPage = lazy(() => import("./pages/PaymentPage"));
 const WithdrawPage = lazy(() => import("./pages/WithdrawPage"));
 const StartCampPage = lazy(() => import("./pages/StartCampPage"));
+const UnauthorizePage = lazy(() => import("./pages/UnauthorizePage"));
+const RequiredAuthPage = lazy(() => import("./pages/RequiredAuthPage"));
 const LayoutDashboard = lazy(() => import("layout/LayoutDashboard"));
 const CampaignView = lazy(() => import("modules/campaign/CampaignView"));
 const LayoutPayment = lazy(() => import("layout/LayoutPayment"));
@@ -54,7 +56,14 @@ function App() {
         <Route element={<LayoutDashboard></LayoutDashboard>}>
           <Route path="/" element={<DashboardPage />}></Route>
           <Route path="/campaign" element={<CampaignPage />}></Route>
-          <Route path="/start-campaign" element={<StartCampPage />}></Route>
+          <Route path="/unauthorize" element={<UnauthorizePage />}></Route>
+          <Route
+            element={
+              <RequiredAuthPage allowPermissions={[]}></RequiredAuthPage>
+            }
+          >
+            <Route path="/start-campaign" element={<StartCampPage />}></Route>
+          </Route>
           <Route path="/payment" element={<PaymentPage />}></Route>
           <Route path="/withdraw" element={<WithdrawPage />}></Route>
           <Route path="/campaign/:slug" element={<CampaignView />}></Route>
