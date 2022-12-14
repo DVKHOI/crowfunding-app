@@ -8,8 +8,8 @@ import ErrorComponent from "../components/common/ErrorComponent";
 import { useSelector } from "react-redux";
 
 const LayoutAuthentication = (props) => {
-  const navigate = useNavigate();
   const { user } = useSelector((state) => state.auth);
+  const navigate = useNavigate();
   useEffect(() => {
     if (user && user.email) {
       navigate("/");

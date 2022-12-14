@@ -1,6 +1,5 @@
 import CampAddNew from "modules/campaign/CampAddNew";
-import React, { Fragment } from "react";
-import { useEffect } from "react";
+import React, { Fragment, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
@@ -13,6 +12,7 @@ const StartCampPage = () => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
+  if (!user || !user.email) return null;
   return (
     <Fragment>
       <CampAddNew></CampAddNew>
